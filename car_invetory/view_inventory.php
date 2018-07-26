@@ -51,8 +51,9 @@ $allMasterManufacturerDetails = $dbgetdetails2->getAllManufactureDetails();
 		?>
 		<tr>
 			<td><?php echo $i; ?></td>
-			<td><?php echo $value['name']; ?></td>
+			
 			<td><?php echo (isset($allMasterManufacturerDetails[$value['manufacturer_id']]) && !empty($allMasterManufacturerDetails[$value['manufacturer_id']])) ? $allMasterManufacturerDetails[$value['manufacturer_id']] : ''; ?></td>
+			<td><?php echo $value['name']; ?></td>
 			<td><?php echo $finalCount[$value['name']][$value['manufacturer_id']]; ?></td>
 			<td style="display:none"><?php echo $value['color_code']; ?></td>
 			<td style="display:none"><?php echo $value['year']; ?></td>
