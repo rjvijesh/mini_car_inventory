@@ -74,9 +74,11 @@ class Database{
 		$allManufacturerDetails=array();
 		$sql = "select id,name from manufacturer_master_details where status=1 ";
 		$cur = mysqli_query($this->conn,$sql);
+		if($cur){
 		while($data = mysqli_fetch_assoc($cur)) { 
 			$allManufacturerDetails[$data['id']] = $data['name'];
-		}
+		}}
+			
 		return $allManufacturerDetails;
 	}
 	
@@ -84,9 +86,10 @@ class Database{
 		$allModelDetails=array();
 		$sql = "select id,name,manufacturer_id,color_code,year,files from model_master_details where status=1";
 		$cur = mysqli_query($this->conn,$sql);
+		if($cur){
 		while($data = mysqli_fetch_assoc($cur)) { 
 			$allModelDetails[$data['id']] = $data;
-		}
+		}}
 		return $allModelDetails;
 	}
 	
