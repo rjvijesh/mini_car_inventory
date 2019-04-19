@@ -4,6 +4,8 @@ class Database{
     private $host;
     private $pass ;
     private $db;
+
+
     private $conn;
 
     public function __construct()
